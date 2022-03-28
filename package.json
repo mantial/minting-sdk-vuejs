@@ -1,5 +1,5 @@
 {
-  "name": "vuejs-sdk",
+  "name": "@roman86/vuejs-sdk",
   "version": "0.0.1",
   "description": "vuejs sdk",
   "main": "dist/vuejs-sdk.umd.js",
