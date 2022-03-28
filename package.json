@@ -1,6 +1,6 @@
 {
   "name": "@roman86/vuejs-sdk",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "vuejs sdk",
   "main": "dist/vuejs-sdk.umd.js",
   "module": "dist/vuejs-sdk.esm.js",
@@ -19,6 +19,7 @@
     "README.md",
     "LICENSE.md"
   ],
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "cross-env": "^7.0.2",
