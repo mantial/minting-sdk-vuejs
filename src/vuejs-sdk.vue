@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'vue-sdk',
+  name: 'vuejs-sdk',
   props: {
     width: {
       type: [Number, String],
