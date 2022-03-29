@@ -1,59 +1,52 @@
 {
-  "name": "@roman86/vuejs-sdk",
-  "version": "0.0.4",
-  "description": "vuejs sdk",
-  "main": "dist/vuejs-sdk.umd.js",
-  "module": "dist/vuejs-sdk.esm.js",
-  "unpkg": "dist/vuejs-sdk.min.js",
-  "scripts": {
-    "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
-    "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/vuejs-sdk.umd.js",
-    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/vuejs-sdk.esm.js",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/vuejs-sdk.min.js"
-  },
-  "browser": {
-    "./src": "src/vuejs-sdk.vue"
-  },
-  "files": [
-    "dist/*",
-    "README.md",
-    "LICENSE.md"
-  ],
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "cross-env": "^7.0.2",
-    "minimist": "^1.2.5",
-    "rollup": "^2.7.2",
-    "rollup-plugin-buble": "^0.19.8",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-uglify-es": "0.0.1",
-    "rollup-plugin-vue": "^5.1.6",
-    "vue": "^2.6.11",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "@roman86/vuejs-sdk",
+    "version": "0.1.0",
+    "description": "vuejs sdk",
+    "main": "dist/vuejs-sdk.common.js",
+    "scripts": {
+        "build": "vue-cli-service build --target lib --name vuejs-sdk ./src/install.js"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
+    "files": [
+        "dist/*",
+        "README.md"
     ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+    "license": "MIT",
+    "dependencies": {
+        "core-js": "^3.8.3",
+        "vue": "^3.2.13"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.16",
+        "@babel/eslint-parser": "^7.12.16",
+        "@vue/cli-plugin-babel": "~5.0.0",
+        "@vue/cli-plugin-eslint": "~5.0.0",
+        "@vue/cli-service": "~5.0.0",
+        "eslint": "^7.32.0",
+        "eslint-plugin-vue": "^8.0.3"
+    },
+    "eslintConfig": {
+        "root": true,
+        "env": {
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/vue3-essential",
+            "eslint:recommended"
+        ],
+        "parserOptions": {
+            "parser": "@babel/eslint-parser"
+        },
+        "rules": {}
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
+        }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead",
+        "not ie 11"
+    ]
 }
