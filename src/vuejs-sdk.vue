@@ -6,7 +6,8 @@
 export default {
   name: 'vuejs-sdk',
   data: () => ({
-    iframeId: null
+    iframeId: null,
+    url: ""
   }),
   props: {
     width: {
@@ -17,48 +18,35 @@ export default {
       type: [Number, String],
       required: true,
     },
-    url: {
-      type: String,
-      required: true
-    },
-    iframeConfig: {
+    config: {
       type: Object,
-      default: () => {
-      }
+      default: () => ({})
     }
-    // network: {
-    //   type: String,
-    //   validator: value => ['ropsten', 'ethereum'].includes(value)
-    // },
-    // collectionSlug: String,
-    // amount: Number,
-    // showTitle: Boolean,
-    // amountSelector: Boolean,
-    // saleSelector: Boolean,
-    // saleId: Number,
-    // showDetails: Boolean,
-    // showErrors: Boolean,
-    // theme: {},
-    // styles: {
-    //   type: Object,
-    //   default: () => {
-    //   }
-    // },
-    // texts: {
-    //   type: Object,
-    //   default: () => {
-    //   }
-    // },
   },
   created() {
     this.iframeId = this.makeId(10)
+    let src =
+        this.config.network === 'ethereum'
+            ? 'https://minter.mantial.com'
+            : 'https://dev.minter.mantial.com';
+    src += `/${this.config.collectionSlug}?`;
+    const params = new URLSearchParams();
+    if (this.config.amount) params.append('amount', this.config.amount.toString());
+    if (this.config.amountSelector) params.append('amountSelector', this.config.amountSelector.toString());
+    if (this.config.showTitle) params.append('showTitle', this.config.showTitle.toString());
+    if (this.config.saleSelector) params.append('saleSelector', this.config.saleSelector.toString());
+    if (this.config.saleId) params.append('saleId', this.config.saleId.toString());
+    if (this.config.showDetails) params.append('showDetails', this.config.showDetails.toString());
+    if (this.config.showErrors) params.append('showErrors', this.config.showErrors.toString());
+    src += params.toString();
+    this.url = src;
   },
   beforeMount() {
     const frame = this.$el || false
     if (frame) {
       frame.onload = () => {
         frame.contentWindow.postMessage(
-            Object.assign({}, this.iframeConfig, {type: 'vuejs-sdk-config'}),
+            Object.assign({}, this.config, {type: 'vuejs-sdk-config'}),
             '*'
         );
       };
