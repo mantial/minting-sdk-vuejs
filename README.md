@@ -60,26 +60,8 @@ Component have props:
         type: [String],
         required: true
     },
-     network: {
-      type: String,
-      validator: value => ['ropsten', 'ethereum'].includes(value)
-    },
-    collectionSlug: String,
-    amount: Number,
-    showTitle: Boolean,
-    amountSelector: Boolean,
-    saleSelector: Boolean,
-    saleId: Number,
-    showDetails: Boolean,
-    showErrors: Boolean,
-    theme: {},
-    styles: {
-      type: Object,
-      default: () => {}
-    },
-    texts: {
-      type: Object,
-      default: () => {}
+     iframeConfig: {
+        type: Object
     }
 }
 ```
