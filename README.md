@@ -1,67 +1,103 @@
-# @roman86/vuejs-sdk
-
-Source code at https://github.com/updev113/vuejs-sdk
+# minting-sdk-vuejs
 
 ## Installation
 
-    npm install @roman86/vuejs-sdk
+``npm install -D minting-sdk-vuejs``
 
-## Build
-
-    npm run build
+``yarn add -D minting-sdk-vuejs``
 
 ## Usage
 
-The VuejsSdk can use as global component. For example:
+---
+The ``minting-sdk-vuejs`` plugin can be use like this example:
+---
 
 ```js
 import Vue from 'vue';
-import VuejsSDK from '@roman86/vuejs-sdk';
+import Minting from 'minting-sdk-vuejs';
 
-Vue.component('vuejs-sdk', VuejsSDK)
+const app = createApp(App)
+app.use(Minting)
 ```
 
-Also import to needed component and use local
+---
+Also use global component where you need
+---
 
 ```vue
 
 <template>
-  <vuejs-sdk width="100%" height="500px" url="http://..."/>
+  <vuejs-sdk width="100%" height="500px" :config="{...}"/>
   <!--  or use number for pass size in pixels-->
-  <vuejs-sdk :width="100" :height="500" url="http://..."/>
+  <vuejs-sdk :width="100" :height="500" :config="{...}"/>
 </template>
-
-<script>
-import VuejsSdk from '@roman86/vuejs-sdk'
-
-export default {
-  // ...
-  components: {
-    VuejsSDK
-  },
-  // ...
-}
-</script>
 ```
 
+---
 Component have props:
+---
 
 ```
 {
+    //Width for iframe
     width: {
         type: [String, Number],
         required: true
     },
+    //Height for iframe
     height: {
         type: [String, Number],
         required: true
     },
-    url: {
-        type: [String],
-        required: true
-    },
-     iframeConfig: {
+    //Config for iframe postMessage
+     config: {
         type: Object
     }
 }
+```
+
+---
+Config for iframe should be follow next structure:
+---
+
+```ts
+{
+    network: 'ropsten' | 'ethereum';
+    collectionSlug: string;
+    amount?: number;
+    showTitle?: boolean;
+    amountSelector?: boolean;
+    saleSelector?: boolean;
+    saleId?: number;
+    showDetails?: boolean;
+    showErrors?: boolean;
+    theme?: any; // ---> MUI v5 theme
+    styles?: { // ---> allow inline styles applied as 'sx' to MUI components
+        button?: any;
+        mintButton?: any;
+        switchNetworkButton?: any;
+        container?: any;
+        title?: any;
+        error?: any;
+        amount?: any;
+        iconButton?: any;
+        texts?: any;
+        success?: any;
+        minting?: any;
+        minterContainer?: any;
+        description?: any;
+        installMetamaskButton?: any;
+    };
+    texts?: {
+        title?: string;
+        minting?: string;
+        success?: string;
+        buy?: string;
+        goBack?: string;
+        description?: string;
+        switchNetwork?: string;
+        installMetamask?: string;
+    };
+}
+;
 ```
