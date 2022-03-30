@@ -41,15 +41,14 @@ export default {
     src += params.toString();
     this.url = src;
   },
-  beforeMount() {
+  mounted() {
     const frame = this.$el || false
     if (frame) {
-      frame.onload = () => {
-        frame.contentWindow.postMessage(
-            Object.assign({}, this.config, {type: 'mantial-config'}),
-            '*'
-        );
-      };
+      const config = Object.assign({}, this.config, {type: 'mantial-config'})
+
+      frame.addEventListener('load', () => {
+        frame.contentWindow.postMessage(config, '*');
+      });
     }
   },
   methods: {
