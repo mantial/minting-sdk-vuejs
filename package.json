@@ -1,6 +1,6 @@
 {
     "name": "@roman86/vuejs-sdk",
-    "version": "0.1.1",
+    "version": "0.1.3",
     "description": "vuejs sdk",
     "main": "dist/vuejs-sdk.common.js",
     "scripts": {
