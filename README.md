@@ -1,5 +1,7 @@
 # minting-sdk-vuejs
 
+Source cose at https://github.com/gitroman38/vue-sdk-test
+
 ## Installation
 
 ``npm install -D minting-sdk-vuejs``

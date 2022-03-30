@@ -1,14 +1,19 @@
 {
     "name": "minting-sdk-vuejs",
-    "version": "0.0.1",
-    "description": "vuejs sdk",
+    "version": "0.0.2",
+    "description": "Mantial - Minting SDK for VueJs",
     "main": "dist/vuejs-sdk.common.js",
+    "author": "Mantial",
     "scripts": {
         "build": "vue-cli-service build --target lib --name vuejs-sdk ./src/install.js"
     },
     "files": [
-        "dist/*",
-        "README.md"
+        "dist"
+    ],
+    "keywords": [
+        "vue",
+        "vuejs",
+        "minting"
     ],
     "license": "MIT",
     "dependencies": {
