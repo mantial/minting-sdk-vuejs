@@ -46,7 +46,7 @@ export default {
     if (frame) {
       frame.onload = () => {
         frame.contentWindow.postMessage(
-            Object.assign({}, this.config, {type: 'vuejs-sdk-config'}),
+            Object.assign({}, this.config, {type: 'mantial-config'}),
             '*'
         );
       };
