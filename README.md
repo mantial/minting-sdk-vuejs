@@ -10,9 +10,8 @@ Source code at https://github.com/mantial/minting-sdk-vuejs
 
 ## Usage
 
----
-The ``minting-sdk-vuejs`` plugin can be use like this example:
----
+
+### The ``minting-sdk-vuejs`` plugin could be used like in this example:
 
 ```js
 import Vue from 'vue';
@@ -22,9 +21,9 @@ const app = createApp(App)
 app.use(Minting)
 ```
 
----
-Also use global component where you need
----
+
+### Also use global component where you need
+
 
 ```vue
 
@@ -35,9 +34,9 @@ Also use global component where you need
 </template>
 ```
 
----
-Component have props:
----
+
+### Component has props:
+
 
 ```
 {
@@ -58,9 +57,9 @@ Component have props:
 }
 ```
 
----
-Config for iframe should be follow next structure:
----
+
+## Mantial configuration
+
 
 ```ts
 {
