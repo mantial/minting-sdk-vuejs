@@ -1,4 +1,4 @@
-# minting-sdk-vuejs
+# @mantial/minting-sdk-vuejs
 
 Source code at https://github.com/mantial/minting-sdk-vuejs
 
