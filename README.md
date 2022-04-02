@@ -1,6 +1,6 @@
 # minting-sdk-vuejs
 
-Source cose at https://github.com/gitroman38/vue-sdk-test
+Source code at https://github.com/mantial/minting-sdk-vuejs
 
 ## Installation
 
