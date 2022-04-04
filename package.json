@@ -1,6 +1,6 @@
 {
-    "name": "minting-sdk-vuejs",
-    "version": "0.0.5",
+    "name": "@mantial/minting-sdk-vuejs",
+    "version": "0.0.1",
     "description": "Mantial - Minting SDK for VueJs",
     "main": "dist/vuejs-sdk.common.js",
     "author": "Mantial",
