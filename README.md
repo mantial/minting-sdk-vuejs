@@ -4,18 +4,18 @@ Source code at https://github.com/mantial/minting-sdk-vuejs
 
 ## Installation
 
-``npm install -D minting-sdk-vuejs``
+``npm install -D @mantial/minting-sdk-vuejs``
 
-``yarn add -D minting-sdk-vuejs``
+``yarn add -D @mantial/minting-sdk-vuejs``
 
 ## Usage
 
 
-### The ``minting-sdk-vuejs`` plugin could be used like in this example:
+### The ``@mantial/minting-sdk-vuejs`` plugin could be used like in this example:
 
 ```js
 import Vue from 'vue';
-import Minting from 'minting-sdk-vuejs';
+import Minting from '@mantial/minting-sdk-vuejs';
 
 const app = createApp(App)
 app.use(Minting)
