@@ -4,9 +4,11 @@ Source code at https://github.com/mantial/minting-sdk-vuejs
 
 ## Installation
 
-``npm install -D @mantial/minting-sdk-vuejs``
+``npm install @mantial/minting-sdk-vuejs``
 
-``yarn add -D @mantial/minting-sdk-vuejs``
+## Build
+
+``npm run rollup``
 
 ## Usage
 
